@@ -1,0 +1,40 @@
+<form #employeeForm="ngForm" (ngSubmit)="addEmployee()" class="max-w-sm mx-auto mt-10 p-10 rounded-lg bg-zinc-400/50">
+  <div class="mb-5">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-neutral-500">Your Name</label>
+    <input type="text" id="name"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="John Doe" required name="employeeName" [(ngModel)]="employee.employeeName" #employeeName="ngModel" />
+    <div *ngIf="employeeName.invalid && employeeName.touched" class="text-red-500 text-sm">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label for="empAdress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-neutral-500">Your
+      Address</label>
+    <input type="text" id="empAdress"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="Colombo" required name="employeeAddress" [(ngModel)]="employee.employeeAddress"
+      #employeeAddress="ngModel" />
+    <div *ngIf="employeeAddress.invalid && employeeAddress.touched" class="text-red-500 text-sm">
+      Address is required.
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-neutral-500">Your Email</label>
+    <input type="email" id="email"
+      class="shadow-sm bg-gray-100 border border-gray-300 text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="johndoe@icet.com" required name="employeeEmail" [(ngModel)]="employee.employeeEmail"
+      #employeeEmail="ngModel" />
+    <div *ngIf="employeeEmail.invalid && employeeEmail.touched" class="text-red-500 text-sm">
+      A valid email is required.
+    </div>
+  </div>
+
+  <button type="submit"
+    class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+    [disabled]="employeeForm.invalid">
+    Add Employee
+  </button>
+</form>
