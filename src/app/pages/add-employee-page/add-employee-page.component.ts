@@ -11,7 +11,8 @@ export class AddEmployeePageComponent {
   public employee: any = {
     employeeName: "",
     employeeAddress: "",
-    employeeEmail: ""
+    employeeEmail: "",
+    employeePassword:""
   };
 
   constructor(private http: HttpClient) {}
@@ -20,7 +21,8 @@ export class AddEmployeePageComponent {
     this.employee = {
       employeeName: "",
       employeeAddress: "",
-      employeeEmail: ""
+      employeeEmail: "",
+      employeePassword:""
     };
   }
 

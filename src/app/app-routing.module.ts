@@ -4,6 +4,7 @@ import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee
 import { ManageEmployeePageComponent } from './pages/manage-employee-page/manage-employee-page.component';
 import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
 
+
 const routes: Routes = [
   {
     path: "",
