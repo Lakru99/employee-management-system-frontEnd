@@ -3,21 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './common/navbar/navbar.component';
-import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee-page.component';
-import { ManageEmployeePageComponent } from './pages/manage-employee-page/manage-employee-page.component';
-import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
+import { AddEmployeePageComponent } from './modules/admin/components/add-employee-page/add-employee-page.component';
+import { ManageEmployeePageComponent } from './modules/admin/components/manage-employee-page/manage-employee-page.component';
+import { MainDashboardPageComponent } from './modules/admin/components/main-dashboard-page/main-dashboard-page.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     AddEmployeePageComponent,
     ManageEmployeePageComponent,
-    MainDashboardPageComponent
+    MainDashboardPageComponent,
+    LoginComponent,
+    ForgetPasswordComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -26,4 +30,4 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

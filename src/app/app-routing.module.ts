@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddEmployeePageComponent } from './pages/add-employee-page/add-employee-page.component';
-import { ManageEmployeePageComponent } from './pages/manage-employee-page/manage-employee-page.component';
-import { MainDashboardPageComponent } from './pages/main-dashboard-page/main-dashboard-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AdminModule } from './modules/admin/admin.module';
+
 
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'forget-password', component: ForgetPasswordComponent},
+  {path: '', redirectTo:'/login', pathMatch:'full'},
   {
-    path: "",
-    component: MainDashboardPageComponent
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },
-  {
-    path: "add-employee",
-    component: AddEmployeePageComponent
-  },
-  {
-      path:"manage-employee",
-      component: ManageEmployeePageComponent
-  }
+  {path: '**', component: NotFoundComponent}
+  
+  
 ];
 
 @NgModule({
