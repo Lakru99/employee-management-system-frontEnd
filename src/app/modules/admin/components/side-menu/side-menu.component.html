@@ -7,7 +7,7 @@
           </div>
         </li>
         <li>
-          <a href="#" routerLink="home"
+          <a href="#" routerLink="home" routerLinkActive="active"
             class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a href="#" routerLink="add-employee"
+          <a href="#" routerLink="add-employee" routerLinkActive="active"
             class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -35,8 +35,8 @@
           </a>
         </li>
         <li>
-          <a href="#" routerLink="manage-employee"
-            class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+          <a href="#" routerLink="manage-employee" routerLinkActive="active"
+            class="relative flex flex-row items-center h-11 focus:outline-none active:bg-gray-600 hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +50,8 @@
         </li>
   
         <li>
-          <a href="#" 
-            class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+          <a href="#" routerLinkActive="active"
+            class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:active:bg-gray-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -100,7 +100,7 @@
               <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+              <a href="#" (click)="logout()" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
             </div>
   
           </a>

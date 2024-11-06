@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AddEmployeePageComponent } from './modules/admin/components/add-employee-page/add-employee-page.component';
 import { ManageEmployeePageComponent } from './modules/admin/components/manage-employee-page/manage-employee-page.component';
 import { MainDashboardPageComponent } from './modules/admin/components/main-dashboard-page/main-dashboard-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
@@ -25,7 +25,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, CommonModule, HttpClientModule
+    AppRoutingModule, FormsModule, CommonModule, HttpClientModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
