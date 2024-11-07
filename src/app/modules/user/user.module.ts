@@ -11,7 +11,6 @@ import { UserSideMenuComponent } from './components/user-side-menu/user-side-men
 @NgModule({
   declarations: [
     UserDashboardComponent,
-    AddLeavePageComponent,
     UserMainDashboardComponent,
     UserSideMenuComponent
   ],

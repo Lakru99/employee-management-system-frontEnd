@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { AddLeavePageComponent } from './modules/user/components/add-leave-page/add-leave-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MainDashboardPageComponent,
     LoginComponent,
     ForgetPasswordComponent,
+    AddLeavePageComponent,
     NotFoundComponent
   ],
   imports: [
