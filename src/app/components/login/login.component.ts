@@ -13,22 +13,49 @@ export class LoginComponent implements OnInit{
     email: new FormControl(''),
     password: new FormControl(''),
   });
+
   constructor(private auth: AuthService, private router: Router){}
+
   ngOnInit(): void {
     if (this.auth.isLoggedIn()) {
       this.router.navigate(['admin/home']);
     }
   }
 
-  onSubmit(){
+  // onSubmit(){
+  //   if (this.loginForm.valid) {
+  //     this.auth.login(this.loginForm.value).subscribe(
+  //       (result) => {
+  //         console.log(result);
+  //         this.router.navigate(['/admin/home']);
+  //       },
+  //       (err: Error) => {
+  //         // alert(err.message);
+  //         Swal.fire({
+  //           title: "Invalid Email or Password",
+  //           text: "Please check your email or password",
+  //           icon: "error"
+  //         });
+  //       }
+  //     );
+  //   }
+  // }
+
+  onSubmit() {
     if (this.loginForm.valid) {
       this.auth.login(this.loginForm.value).subscribe(
         (result) => {
           console.log(result);
-          this.router.navigate(['/admin/home']);
+  
+          // Check the user's role and navigate accordingly
+          if (result.role === 'admin') {
+            this.router.navigate(['/admin/home']);
+          } else if (result.role === 'user') {
+            this.router.navigate(['/user/home']);
+          }
         },
         (err: Error) => {
-          // alert(err.message);
+          // Display error alert
           Swal.fire({
             title: "Invalid Email or Password",
             text: "Please check your email or password",
@@ -38,5 +65,6 @@ export class LoginComponent implements OnInit{
       );
     }
   }
+  
 
 }

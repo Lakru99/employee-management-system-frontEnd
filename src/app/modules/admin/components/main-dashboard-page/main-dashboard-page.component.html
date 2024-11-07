@@ -67,6 +67,41 @@
           </div>
         </div>
       </div>
+
+
+
+      <div class="mt-4 mx-4">
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                  <th class="px-4 py-3">Employee Name</th>
+                  <th class="px-4 py-3">Employee Address</th>
+                  <th class="px-4 py-3">Employee Email</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                <tr *ngFor="let employee of employeeList; index as i" class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                  <td class="px-4 py-3">
+                    {{employee.employeeName}}
+                  </td>
+                  <td class="px-4 py-3 text-sm">
+                    {{employee.employeeAddress}}
+                  </td>
+                  <td class="px-4 py-3 text-xs">
+                    {{employee.employeeEmail}}
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    
   </div>
 </div>
