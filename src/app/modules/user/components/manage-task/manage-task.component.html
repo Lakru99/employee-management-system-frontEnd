@@ -1,28 +1,25 @@
 <div class="h-full ml-14  md:ml-64">
     <div class="min-h-screen bg-blue-500 dark:bg-gray-700  shadow-lg   p-3  border-blue-600 dark:border-gray-600 text-white font-medium group">
-   <h2 class="mx-auto text-white text-center text-4xl">Manage Employee Form</h2>
+   <h2 class="mx-auto text-white text-center text-4xl">Manage Task Form</h2>
         <div class="container mt-10 mx-auto">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Count
+                                Task Count
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Employee ID
+                                Task ID
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Employee Name
+                                Task Name
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Employee Address
+                                Task Description
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Employee Email
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Employee Password
+                                Task States
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Action
@@ -30,29 +27,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b  dark:border-gray-700" *ngFor="let employee of employeeList; index as i">
+                        <tr class="bg-white border-b  dark:border-gray-700" *ngFor="let task of taskList; index as i">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                 {{i+1}}
                             </th>
                             <td class="px-6 py-4">
-                                {{employee.employeeId}}
+                                {{task.taskId}}
                             </td>
                             <td class="px-6 py-4">
-                                {{employee.employeeName}}
+                                {{task.taskName}}
                             </td>
                             <td class="px-6 py-4">
-                                {{employee.employeeAddress}}
+                                {{task.taskDescription}}
                             </td>
                             <td class="px-6 py-4">
-                                {{employee.employeeEmail}}
+                                {{task.taskStates}}
                             </td>
-                            <td class="px-6 py-4">
-                                {{employee.employeePassword}}
-                            </td>
+                            
                             <td class="px-6 py-4 flex ">
-                                <button (click)="openModal(); updateEmployee(employee)" class="font-medium flex-1  dark:text-blue-500 hover:underline" ><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="font-medium flex-1 dark:text-red-500 hover:underline" (click)="deleteEmployeeById(employee.employeeId)"><i class="fa-solid fa-trash-can"></i></button>
-                                
+                                <button (click)="openModal(); updateTask(task)" class="font-medium flex-1  dark:text-blue-500 hover:underline" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="font-medium flex-1 dark:text-red-500 hover:underline" (click)="deleteTaskById(task.taskId)"><i class="fa-solid fa-trash-can"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -67,7 +61,7 @@
         
                       <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                              Update Employee Details
+                              Update Task Details
                           </h3>
                           <button (click)="closeModal()" type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
                               <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -77,30 +71,33 @@
                           </button>
                       </div>
                       <div class="p-4 md:p-5">
-                          <form (ngSubmit)="saveEmployee()" class="space-y-4" action="#">
+                          <form (ngSubmit)="saveTask()" class="space-y-4" action="#">
                             <div>
-                                <label for="employeeId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employee Id</label>
-                                <input [(ngModel)]="employeeTemp.employeeId" type="text" name="employeeId" id="employeeId" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" disabled />
+                                <label for="taskId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Id</label>
+                                <input [(ngModel)]="taskTemp.taskId" type="text" name="taskId" id="taskId" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" disabled />
                             </div>
         
                             <div>
-                                <label for="employeeName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employee Name</label>
-                                <input [(ngModel)]="employeeTemp.employeeName" type="text" name="employeeName" id="employeeName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                                <label for="taskName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Name</label>
+                                <input [(ngModel)]="taskTemp.taskName" type="text" name="taskName" id="taskName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                             </div>
         
                             <div>
-                                <label for="employeeAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employee Adress</label>
-                                <input [(ngModel)]="employeeTemp.employeeAddress" type="text" name="employeeAddress" id="employeeAddress" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                                <label for="taskDescription" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Description</label>
+                                <input [(ngModel)]="taskTemp.taskDescription" type="text" name="taskDescription" id="taskDescription" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                             </div>
-        
-                            <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employee Email</label>
-                                <input [(ngModel)]="employeeTemp.employeeEmail" type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-                            </div>
-        
-                            <div>
-                                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employee Password</label>
-                                <input [(ngModel)]="employeeTemp.employeePassword" type="password" name="password" id="pasword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+
+                            <div class="mb-5">
+                                <label for="taskStates" class="block mb-2 text-sm font-medium text-gray-900 dark:text-stale-300">
+                                    Task States
+                                </label>
+                                <select id="taskStates"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                                    required name="taskStates" [(ngModel)]="taskTemp.taskStates" #taskStates="ngModel">
+                                    <option value="" disabled>Select Task State</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="incomplete">Incomplete</option>
+                                </select>
                             </div>
          
                               <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update Employee</button>

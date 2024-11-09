@@ -1,0 +1,58 @@
+<div class="h-full ml-14  md:ml-64 ">
+
+
+
+    <div
+        class="bg-blue-500  dark:bg-gray-700 shadow-lg h-screen  p-3  border-blue-600 dark:border-gray-600 text-white font-medium group">
+        <h2 class="mx-auto text-white text-center text-4xl mb-5">Add Task Form</h2>
+        <form #taskForm="ngForm" (ngSubmit)="addTask()" class="max-w-sm w-2/3  mx-auto p-10 rounded-lg bg-zinc-400/50">
+            <div class="mb-5">
+                <label for="taskName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-stale-300">Task
+                    Name</label>
+                <input type="text" id="taskName"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    placeholder="Personal" required name="taskName" [(ngModel)]="task.taskName" #taskName="ngModel" />
+                <div *ngIf="taskName.invalid && taskName.touched" class="text-red-500 text-sm">
+                    Name is required.
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label for="taskDescription"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-stale-300">Task Description</label>
+                <input type="text" id="taskDescription"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    placeholder="Personal" required name="taskDescription" [(ngModel)]="task.taskDescription"
+                    #taskDescription="ngModel" />
+                <div *ngIf="taskDescription.invalid && taskDescription.touched" class="text-red-500 text-sm">
+                    Name is required.
+                </div>
+            </div>
+
+
+            <div class="mb-5">
+                <label for="taskStates" class="block mb-2 text-sm font-medium text-gray-900 dark:text-stale-300">
+                    Task States
+                </label>
+                <select id="taskStates"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-300/5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-blue-950 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    required name="taskStates" [(ngModel)]="task.taskStates" #taskStates="ngModel">
+                    <option value="" disabled>Select Task State</option>
+                    <option value="completed">Completed</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+
+                <div *ngIf="taskStates.invalid && taskStates.touched" class="text-red-500 text-sm">
+                    Task state is required.
+                </div>
+            </div>
+
+
+            <button type="submit"
+                class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                [disabled]="taskForm.invalid">
+                Add Task
+            </button>
+        </form>
+    </div>
+</div>

@@ -37,10 +37,10 @@
 
   
         <li>
-          <a href="#" routerLinkActive="active"
+          <a href="#" routerLink="manage-leave" routerLinkActive="active"
             class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:active:bg-gray-600 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-5 h-5 whi" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                   d="M12 3c1.38 0 2.5 1.12 2.5 2.5S13.38 8 12 8s-2.5-1.12-2.5-2.5S10.62 3 12 3zM6 11h12M4 20h2l3-8h8l3 8h2"/>
                 <path d="M5 20c0 1 1 2 2 2s2-1 2-2M15 20c0 1 1 2 2 2s2-1 2-2" />
@@ -52,20 +52,40 @@
         </li>
   
         <li>
-          <a href="#"
+          <a href="#" routerLink="add-task"
             class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
             <span class="inline-flex justify-center items-center ml-4">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                </path>
+              <svg width="20" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+                  class="stroke-current text-white dark:text- transform transition-transform duration-500 ease-in-out">
+                <rect x="5" y="3" width="14" height="18" rx="2" ry="2" fill="none" stroke-width="2"/>
+                <path d="M12 8v6m0 0v-6m-3 3h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
               </svg>
+
             </span>
-            <span class="ml-2 text-sm tracking-wide truncate">Notifications</span>
+            <span class="ml-2 text-sm tracking-wide truncate">Add Task</span>
   
           </a>
         </li>
+
+        <li>
+          <a href="#" routerLink="manage-task"
+            class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+            <span class="inline-flex justify-center items-center ml-4">
+              <svg width="20" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+              class="stroke-current text-white dark:text-white transform transition-transform duration-500 ease-in-out">
+              <rect x="5" y="3" width="14" height="18" rx="2" ry="2" fill="none" stroke-width="2"/>
+              <path d="M8 10h6" stroke-linecap="round" stroke-width="2" />
+              <path d="M8 13h4" stroke-linecap="round" stroke-width="2" />
+              <path d="M14 7l3 3-6 6H8v-3l6-6z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+         </svg>
+         
+            </span>
+            <span class="ml-2 text-sm tracking-wide truncate">Manage Task</span>
+  
+          </a>
+        </li>
+
+
         <li class="px-5 hidden md:block">
           <div class="flex flex-row items-center mt-5 h-8">
             <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Settings</div>

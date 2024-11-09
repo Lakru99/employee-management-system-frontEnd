@@ -13,8 +13,7 @@ export class AddLeavePageComponent {
 
   public leave:any={
     leaveName: "",
-    leaveDate: "",
-    employeeId: ""
+    leaveDate: ""
   }
   constructor(private http: HttpClient) {}
 
